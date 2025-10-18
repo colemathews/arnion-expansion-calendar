@@ -1,0 +1,11 @@
+# List ICS feed URLs here (one per line). Examples below.
+# Meetup group ICS (usually works):
+# https://www.meetup.com/sfentrepreneur/events/ical/         # SF Entrepreneurs & Startups
+# https://www.meetup.com/sventrepreneurs/events/ical/        # Silicon Valley Entrepreneurs
+# https://www.meetup.com/startup-sf/events/ical/             # Startup SF
+# https://www.meetup.com/oakland-entrepreneurs/events/ical/  # Example Oakland group
+
+# Luma calendars sometimes provide ICS; use their feed link if available.
+# Chambers/SBDCs often expose ICS via their event pages.
+
+# Add or remove as you wish:

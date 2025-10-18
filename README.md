@@ -1,6 +1,3 @@
-# arnion-expansion-calendar
-Automated calendar for entrepreneur events in the Bay Area
-[README.md](https://github.com/user-attachments/files/22987563/README.md)
 # Arnion Expansion Calendar — Auto-Updating Feed
 
 This repo generates a **single master `.ics`** file and pushes it to your **Gist** on a schedule so Google Calendar stays synced automatically.
