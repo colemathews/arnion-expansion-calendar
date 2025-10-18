@@ -1,0 +1,33 @@
+name: Update Arnion Expansion Calendar
+
+on:
+  schedule:
+    - cron: '0 14 * * *'  # 7:00 AM PT (14:00 UTC) daily
+  repository_dispatch:
+    types: [update_calendar]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install ics==0.7 pytz pyyaml requests
+
+      - name: Merge sources and update Gist
+        env:
+          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+          GIST_ID: ${{ secrets.GIST_ID }}
+          GIST_FILENAME: ${{ secrets.GIST_FILENAME }}
+        run: |
+          python merge_ics.py
