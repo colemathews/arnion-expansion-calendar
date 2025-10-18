@@ -21,8 +21,9 @@ jobs:
 
       - name: Install deps
         run: |
-          python -m pip install --upgrade pip
-          pip install ics==0.7 pytz pyyaml requests
+         python -m pip install --upgrade pip
+         pip install "TatSu==4.4.0"      # <-- pin parser version for ics
+         pip install "ics==0.7" pytz pyyaml requests
 
       - name: Merge sources and update Gist
         env:
