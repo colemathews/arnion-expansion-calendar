@@ -1,11 +1,55 @@
-# List ICS feed URLs here (one per line). Examples below.
-# Meetup group ICS (usually works):
-# https://www.meetup.com/sfentrepreneur/events/ical/         # SF Entrepreneurs & Startups
-# https://www.meetup.com/sventrepreneurs/events/ical/        # Silicon Valley Entrepreneurs
-# https://www.meetup.com/startup-sf/events/ical/             # Startup SF
-# https://www.meetup.com/oakland-entrepreneurs/events/ical/  # Example Oakland group
+# -----------------------------
+# BAY AREA ENTREPRENEUR FEEDS
+# -----------------------------
 
-# Luma calendars sometimes provide ICS; use their feed link if available.
-# Chambers/SBDCs often expose ICS via their event pages.
+# San Francisco Entrepreneurs & Startups
+https://www.meetup.com/sfentrepreneur/events/ical/
 
-# Add or remove as you wish:
+# Silicon Valley Entrepreneurs
+https://www.meetup.com/sventrepreneurs/events/ical/
+
+# Startup SF (Pitch Nights, Mixers)
+https://www.meetup.com/startup-sf/events/ical/
+
+# Bay Area Business Networking / Marketing Meetup
+https://www.meetup.com/bayareabusinessnetworkingsanjose/events/ical/
+
+# Startup Grind Silicon Valley, SF, East Bay
+https://www.meetup.com/startup-grind-silicon-valley-san-francisco-east-bay/events/ical/
+
+# East Bay Founders & Innovators
+https://www.meetup.com/east-bay-founders/events/ical/
+
+# Hayward Chamber of Commerce (Business Mixers & Policy Events)
+https://hayward.org/events/?ical=1
+
+# East Bay SBDC (Small Business Workshops)
+https://www.eastbaysbdc.org/events/?ical=1
+
+# SCORE East Bay (Business Education)
+https://eastbay.score.org/events-calendar?ical=1
+
+# TechCrunch Events
+https://techcrunch.com/events/feed/
+
+# Luma SF (Entrepreneur / Creator Events)
+https://lu.ma/sf?ical=1
+
+# EO Silicon Valley (Entrepreneurs’ Organization)
+https://eonetwork.org/siliconvalley/events/ical
+
+# Founders Network (Bay Area)
+https://foundersnetwork.com/events/feed/
+
+# Plug and Play Tech Center (Sunnyvale)
+https://www.plugandplaytechcenter.com/events/feed/
+
+# AWS Loft SF (Startup Community Events)
+https://aws-startups-sf.splashthat.com/calendar?format=ical
+
+# Global Startup Ecosystem Bay Area (Investor / Pitch Events)
+https://www.startupgrind.com/events/ical/
+
+# -----------------------------
+# END OF FEED LIST
+# -----------------------------
