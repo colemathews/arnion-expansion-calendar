@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-import os, re, sys, requests, pytz, yaml
-from datetime import datetime, timedelta
+import os, re, sys, requests, yaml
+from datetime import timedelta
 from ics import Calendar, Event
 from ics.alarm import DisplayAlarm
 from zoneinfo import ZoneInfo
@@ -30,11 +30,14 @@ def load_top_tier(path="top_tier.yml"):
 
 def fetch_ics(url):
     try:
-        r = requests.get(url, timeout=30)
+        r = requests.get(url, timeout=30, headers={"User-Agent": "ArnionCalendarBot/1.0"})
         r.raise_for_status()
-        return r.text
+        text = r.text
+        if not text.startswith("BEGIN:VCALENDAR"):
+            raise ValueError("Not a valid .ics feed")
+        return text
     except Exception as e:
-        print(f"[warn] failed to fetch {url}: {e}", file=sys.stderr)
+        print(f"[warn] failed to fetch or parse {url}: {e}", file=sys.stderr)
         return ""
 
 def norm_dt(dt):
@@ -46,10 +49,8 @@ def norm_dt(dt):
 
 def build_leo_alarms(boost_type):
     alarms = []
-    # 30-minute mindset primer
     alarms.append(DisplayAlarm(trigger=timedelta(minutes=-30),
                                display_text="🦁 Leo Boost (30 min prior)"))
-    # 10-minute tactical reminder
     texts = {
         "investor": "You’re not seeking approval—you’re offering opportunity. Lead with legacy, not logistics. Calm power. Strategic confidence.",
         "networking": "Goal: one real connection that lasts. Ask vision questions. Smile first, listen hard, connect two people before you leave.",
@@ -121,7 +122,8 @@ def main():
     cal.creator = "Arnion Expansion Calendar — Auto"
     cal.extra.append(("X-WR-CALNAME", "Arnion Expansion Calendar 🦁"))
     cal.extra.append(("X-WR-TIMEZONE", "America/Los_Angeles"))
-    text = cal.serialize()
+    # The fix: convert Calendar to string directly
+    text = str(cal)
     upload_to_gist(text)
 
 if __name__ == "__main__":
