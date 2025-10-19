@@ -33,6 +33,7 @@ def fetch_ics(url):
         r = requests.get(url, timeout=30, headers={"User-Agent": "ArnionCalendarBot/1.0"})
         r.raise_for_status()
         text = r.text
+        # Only accept true iCal files
         if not text.startswith("BEGIN:VCALENDAR"):
             raise ValueError("Not a valid .ics feed")
         return text
@@ -49,8 +50,10 @@ def norm_dt(dt):
 
 def build_leo_alarms(boost_type):
     alarms = []
+    # 30-minute mindset primer
     alarms.append(DisplayAlarm(trigger=timedelta(minutes=-30),
                                display_text="🦁 Leo Boost (30 min prior)"))
+    # 10-minute tactical reminder
     texts = {
         "investor": "You’re not seeking approval—you’re offering opportunity. Lead with legacy, not logistics. Calm power. Strategic confidence.",
         "networking": "Goal: one real connection that lasts. Ask vision questions. Smile first, listen hard, connect two people before you leave.",
@@ -76,29 +79,37 @@ def merge_calendars(source_urls, top_tier_cfg):
         except Exception as e:
             print(f"[warn] parse failed for {url}: {e}", file=sys.stderr)
             continue
+
         for ev in list(c.events):
+            # Normalize times to PT
             ev.begin = norm_dt(ev.begin.datetime)
             if ev.end:
                 ev.end = norm_dt(ev.end.datetime)
+
+            # Tier tagging
             title = (ev.name or "").strip()
             tier_emoji = "🤝"
             boost_type = None
-            title_lower = title.lower()
-            if any(k in title_lower for k in ["workshop", "masterclass", "training", "bootcamp", "summit", "school"]):
+            tl = title.lower()
+            if any(k in tl for k in ["workshop", "masterclass", "training", "bootcamp", "summit", "school"]):
                 tier_emoji = "🧠"
-            if any(k in title_lower for k in ["mixer", "network", "happy hour", "meetup", "connect"]):
+            if any(k in tl for k in ["mixer", "network", "happy hour", "meetup", "connect"]):
                 tier_emoji = "🚀"
             for rx, btype in patterns:
                 if rx.search(title or ""):
                     tier_emoji = "💎"
                     boost_type = btype
                     break
+
             if tier_emoji and not title.startswith(tier_emoji):
                 ev.name = f"{tier_emoji} {title}"
+
             if tier_emoji == "💎":
                 for a in build_leo_alarms(boost_type):
                     ev.alarms.append(a)
+
             master.events.add(ev)
+
     return master
 
 def upload_to_gist(calendar_text):
@@ -119,11 +130,11 @@ def main():
     srcs = load_sources()
     cfg = load_top_tier()
     cal = merge_calendars(srcs, cfg)
-    cal.creator = "Arnion Expansion Calendar — Auto"
-    cal.extra.append(("X-WR-CALNAME", "Arnion Expansion Calendar 🦁"))
-    cal.extra.append(("X-WR-TIMEZONE", "America/Los_Angeles"))
-    # The fix: convert Calendar to string directly
-    text = str(cal)
+
+    # Note: avoid cal.extra.append(...) with tuples; ics==0.7 expects ContentLine objects.
+    # Using default metadata is fine. If you want custom X-WR-* lines later, we can add them safely.
+
+    text = str(cal)  # serialize calendar
     upload_to_gist(text)
 
 if __name__ == "__main__":
