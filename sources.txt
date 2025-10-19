@@ -1,55 +1,38 @@
-# -----------------------------
-# BAY AREA ENTREPRENEUR FEEDS
-# -----------------------------
+# -----------------------------------------------------
+# ARNION EXPANSION CALENDAR — CORE FEEDS
+# San Francisco & Silicon Valley — Tech, Business, Faith, Leadership
+# -----------------------------------------------------
 
-# San Francisco Entrepreneurs & Startups
-https://www.meetup.com/sfentrepreneur/events/ical/
+# ---- TECH / STARTUP / INVESTOR ----
+https://www.startupgrind.com/san-francisco/events/ical/        # Startup Grind SF
+https://www.startupgrind.com/silicon-valley/events/ical/        # Startup Grind Silicon Valley
+https://www.eventbrite.com/d/ca--san-francisco/tech--events/?format=ics  # Eventbrite tech events
+https://sfnewtech.com/events/?ical=1                            # SF New Tech Meetups
+https://www.meetup.com/entrepreneurship-silicon-valley/events/ical/   # Silicon Valley Entrepreneurs
+https://www.meetup.com/ai-sf/events/ical/                       # AI SF Meetups
+https://www.meetup.com/startup-sandbox/events/ical/             # Startup Sandbox events
+https://svforum.org/events/?ical=1                              # SVForum professional events
 
-# Silicon Valley Entrepreneurs
-https://www.meetup.com/sventrepreneurs/events/ical/
+# ---- LEADERSHIP / NETWORKING / FAITH ----
+https://www.meetup.com/faith-and-business-bay-area/events/ical/ # Faith + Business Network
+https://www.meetup.com/christian-professionals-bay-area/events/ical/  # Christian Professionals Bay Area
+https://www.meetup.com/silicon-valley-leadership-group/events/ical/   # SV Leadership Group
+https://www.meetup.com/east-bay-professionals-networking/events/ical/ # East Bay Networking
 
-# Startup SF (Pitch Nights, Mixers)
-https://www.meetup.com/startup-sf/events/ical/
+# ---- BUSINESS DEVELOPMENT / LEARNING ----
+https://www.meetup.com/learn-ai-sf/events/ical/                 # Learn AI SF
+https://www.meetup.com/san-francisco-small-business-network/events/ical/ # SF Small Business Network
+https://www.meetup.com/women-in-tech-san-francisco/events/ical/ # Women in Tech SF
+https://www.meetup.com/product-school-san-francisco/events/ical/ # Product School SF
+https://www.meetup.com/sales-leadership-meetup-sf/events/ical/   # Sales Leadership SF
+https://www.meetup.com/fintech-silicon-valley/events/ical/       # FinTech Silicon Valley
 
-# Bay Area Business Networking / Marketing Meetup
-https://www.meetup.com/bayareabusinessnetworkingsanjose/events/ical/
+# ---- HIGH-QUALITY LOCAL HUBS ----
+https://www.meetup.com/founders-network/events/ical/            # Founders Network (works if authenticated)
+https://www.meetup.com/sf-entrepreneurs/events/ical/            # SF Entrepreneurs
+https://www.meetup.com/sf-business-owners/events/ical/          # SF Business Owners Networking
 
-# Startup Grind Silicon Valley, SF, East Bay
-https://www.meetup.com/startup-grind-silicon-valley-san-francisco-east-bay/events/ical/
-
-# East Bay Founders & Innovators
-https://www.meetup.com/east-bay-founders/events/ical/
-
-# Hayward Chamber of Commerce (Business Mixers & Policy Events)
-https://hayward.org/events/?ical=1
-
-# East Bay SBDC (Small Business Workshops)
-https://www.eastbaysbdc.org/events/?ical=1
-
-# SCORE East Bay (Business Education)
-https://eastbay.score.org/events-calendar?ical=1
-
-# TechCrunch Events
-https://techcrunch.com/events/feed/
-
-# Luma SF (Entrepreneur / Creator Events)
-https://lu.ma/sf?ical=1
-
-# EO Silicon Valley (Entrepreneurs’ Organization)
-https://eonetwork.org/siliconvalley/events/ical
-
-# Founders Network (Bay Area)
-https://foundersnetwork.com/events/feed/
-
-# Plug and Play Tech Center (Sunnyvale)
-https://www.plugandplaytechcenter.com/events/feed/
-
-# AWS Loft SF (Startup Community Events)
-https://aws-startups-sf.splashthat.com/calendar?format=ical
-
-# Global Startup Ecosystem Bay Area (Investor / Pitch Events)
-https://www.startupgrind.com/events/ical/
-
-# -----------------------------
-# END OF FEED LIST
-# -----------------------------
+# ---- BACKUP SOURCES ----
+https://www.meetup.com/bay-area-startup-ideas/events/ical/
+https://www.meetup.com/startup-founders-network/events/ical/
+https://www.meetup.com/ai-product-managers-sf/events/ical/
