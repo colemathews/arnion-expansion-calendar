@@ -1,15 +1,15 @@
 # Map event name patterns to Leo Boost types.
 # boost types: investor, networking, learning, leadership, vision
 top_tier:
-  - pattern: '(?i)TechCrunch Disrupt'
-    boost: 'investor'
-  - pattern: '(?i)Startup World Cup'
-    boost: 'investor'
-  - pattern: '(?i)GitHub Universe'
-    boost: 'investor'
-  - pattern: '(?i)EO( |\b).*Silicon Valley|Entrepreneurs'? Organization'
-    boost: 'leadership'
-  - pattern: '(?i)fnSummit|Founders Network'
-    boost: 'leadership'
-  - pattern: '(?i)Plug and Play|Demo Day'
-    boost: 'investor'
+  - pattern: "(?i)TechCrunch Disrupt"
+    boost: "investor"
+  - pattern: "(?i)Startup World Cup"
+    boost: "investor"
+  - pattern: "(?i)GitHub Universe"
+    boost: "investor"
+  - pattern: "(?i)(EO|Entrepreneurs.? Organization).*Silicon Valley"
+    boost: "leadership"
+  - pattern: "(?i)fnSummit|Founders Network"
+    boost: "leadership"
+  - pattern: "(?i)Plug and Play|Demo Day"
+    boost: "investor"
