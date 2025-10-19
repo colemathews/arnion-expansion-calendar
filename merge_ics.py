@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os, re, sys, requests, yaml
 from datetime import timedelta
-from ics import Calendar, Event
+from ics import Calendar
 from ics.alarm import DisplayAlarm
 from zoneinfo import ZoneInfo
 
@@ -10,6 +10,7 @@ TZ = ZoneInfo("America/Los_Angeles")
 GIST_TOKEN = os.environ.get("GIST_TOKEN")
 GIST_ID = os.environ.get("GIST_ID")
 GIST_FILENAME = os.environ.get("GIST_FILENAME", "Arnion_Expansion_Calendar.ics")
+
 
 def load_sources(path="sources.txt"):
     urls = []
@@ -22,24 +23,26 @@ def load_sources(path="sources.txt"):
                 urls.append(line)
     return urls
 
+
 def load_top_tier(path="top_tier.yml"):
     if os.path.exists(path):
         with open(path, "r") as f:
             return yaml.safe_load(f) or {}
     return {"top_tier": []}
 
+
 def fetch_ics(url):
     try:
         r = requests.get(url, timeout=30, headers={"User-Agent": "ArnionCalendarBot/1.0"})
         r.raise_for_status()
         text = r.text
-        # Only accept true iCal files
         if not text.startswith("BEGIN:VCALENDAR"):
             raise ValueError("Not a valid .ics feed")
         return text
     except Exception as e:
         print(f"[warn] failed to fetch or parse {url}: {e}", file=sys.stderr)
         return ""
+
 
 def norm_dt(dt):
     if dt is None:
@@ -48,12 +51,11 @@ def norm_dt(dt):
         dt = dt.replace(tzinfo=ZoneInfo("UTC"))
     return dt.astimezone(TZ)
 
+
 def build_leo_alarms(boost_type):
     alarms = []
-    # 30-minute mindset primer
     alarms.append(DisplayAlarm(trigger=timedelta(minutes=-30),
                                display_text="🦁 Leo Boost (30 min prior)"))
-    # 10-minute tactical reminder
     texts = {
         "investor": "You’re not seeking approval—you’re offering opportunity. Lead with legacy, not logistics. Calm power. Strategic confidence.",
         "networking": "Goal: one real connection that lasts. Ask vision questions. Smile first, listen hard, connect two people before you leave.",
@@ -64,6 +66,7 @@ def build_leo_alarms(boost_type):
     alarms.append(DisplayAlarm(trigger=timedelta(minutes=-10),
                                display_text=texts.get(boost_type, "Walk in like you belong. Transmit conviction.")))
     return alarms
+
 
 def merge_calendars(source_urls, top_tier_cfg):
     master = Calendar()
@@ -81,12 +84,10 @@ def merge_calendars(source_urls, top_tier_cfg):
             continue
 
         for ev in list(c.events):
-            # Normalize times to PT
             ev.begin = norm_dt(ev.begin.datetime)
             if ev.end:
                 ev.end = norm_dt(ev.end.datetime)
 
-            # Tier tagging
             title = (ev.name or "").strip()
             tier_emoji = "🤝"
             boost_type = None
@@ -108,9 +109,26 @@ def merge_calendars(source_urls, top_tier_cfg):
                 for a in build_leo_alarms(boost_type):
                     ev.alarms.append(a)
 
+            # 🔗 Add event link to description if present
+            link_line = ""
+            if hasattr(ev, "url") and ev.url:
+                link_line = f"\n\n🔗 Event link: {ev.url}"
+            elif ev.description and "http" in ev.description:
+                # Try to extract a link from description text
+                match = re.search(r"(https?://[^\s]+)", ev.description)
+                if match:
+                    link_line = f"\n\n🔗 Event link: {match.group(1)}"
+
+            if link_line:
+                if ev.description:
+                    ev.description = ev.description.strip() + link_line
+                else:
+                    ev.description = f"Details not provided.{link_line}"
+
             master.events.add(ev)
 
     return master
+
 
 def upload_to_gist(calendar_text):
     if not GIST_TOKEN or not GIST_ID:
@@ -126,16 +144,14 @@ def upload_to_gist(calendar_text):
         raise RuntimeError(f"Gist update failed: {r.status_code} {r.text}")
     print("[ok] Gist updated.")
 
+
 def main():
     srcs = load_sources()
     cfg = load_top_tier()
     cal = merge_calendars(srcs, cfg)
-
-    # Note: avoid cal.extra.append(...) with tuples; ics==0.7 expects ContentLine objects.
-    # Using default metadata is fine. If you want custom X-WR-* lines later, we can add them safely.
-
-    text = str(cal)  # serialize calendar
+    text = str(cal)
     upload_to_gist(text)
+
 
 if __name__ == "__main__":
     main()
