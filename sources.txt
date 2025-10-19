@@ -1,1 +1,41 @@
+# --- CORE BAY AREA FEEDS (Startup / Tech / Leadership) ---
+https://www.meetup.com/startup-sf-bay-area/events/ical/
+https://www.meetup.com/silicon-valley-startups/events/ical/
+https://www.meetup.com/san-francisco-entrepreneurs-network/events/ical/
+https://www.meetup.com/tech-and-startups-san-jose/events/ical/
+https://www.meetup.com/startup-socials-silicon-valley/events/ical/
+https://www.meetup.com/founders-hackers/events/ical/
+https://www.meetup.com/women-in-tech-bay-area/events/ical/
+https://www.meetup.com/product-sf/events/ical/
+https://www.meetup.com/venture-capital-and-startups/events/ical/
+https://www.meetup.com/ai-tech-and-entrepreneurs-sf/events/ical/
+
+# --- BUSINESS + INVESTOR ---
+https://www.meetup.com/angel-investors-silicon-valley/events/ical/
+https://www.meetup.com/sf-entrepreneurs/events/ical/
+https://www.meetup.com/startupfounderscommunity/events/ical/
+https://www.meetup.com/finance-innovation-sf/events/ical/
+https://www.meetup.com/sv-small-business-network/events/ical/
+
+# --- NETWORKING + COMMUNITY ---
+https://www.meetup.com/professionals-in-tech-sf/events/ical/
+https://www.meetup.com/leadership-lounge-bay-area/events/ical/
+https://www.meetup.com/san-francisco-young-professionals/events/ical/
+https://www.meetup.com/silicon-valley-young-professionals/events/ical/
+https://www.meetup.com/network-after-work-san-francisco/events/ical/
+
+# --- INNOVATION + CONFERENCES ---
+https://www.eventbrite.com/calendar.ics?eid=techcrunch-disrupt-san-francisco
+https://www.eventbrite.com/calendar.ics?eid=startup-world-cup-silicon-valley
+https://www.eventbrite.com/calendar.ics?eid=plug-and-play-tech-center
+https://www.eventbrite.com/calendar.ics?eid=aws-startup-loft-sf
+
+# --- BONUS: INDUSTRY HUBS + UNIVERSITY INNOVATION ---
 https://events.berkeley.edu/?view=ical
+https://engineering.stanford.edu/events/ical
+https://calendar.sjsu.edu/calendar.ics
+
+# --- OPTIONAL (Safe to enable later if working again) ---
+# https://foundersnetwork.com/events/feed/   # RSS only (no .ics)
+# https://lu.ma/sf?ical=1                     # HTML, not iCal
+# https://www.startupgrind.com/events/ical/   # Broken for now
