@@ -1,41 +1,93 @@
-# --- CORE BAY AREA FEEDS (Startup / Tech / Leadership) ---
-https://www.meetup.com/startup-sf-bay-area/events/ical/
-https://www.meetup.com/silicon-valley-startups/events/ical/
-https://www.meetup.com/san-francisco-entrepreneurs-network/events/ical/
-https://www.meetup.com/tech-and-startups-san-jose/events/ical/
-https://www.meetup.com/startup-socials-silicon-valley/events/ical/
-https://www.meetup.com/founders-hackers/events/ical/
-https://www.meetup.com/women-in-tech-bay-area/events/ical/
-https://www.meetup.com/product-sf/events/ical/
-https://www.meetup.com/venture-capital-and-startups/events/ical/
-https://www.meetup.com/ai-tech-and-entrepreneurs-sf/events/ical/
+# ============================================
+# ARNION EXPANSION CALENDAR – BAY AREA RADAR
+# High-signal ICS-only feeds (Startup / Tech / Learning / Capital)
+# ============================================
 
-# --- BUSINESS + INVESTOR ---
-https://www.meetup.com/angel-investors-silicon-valley/events/ical/
+# --- CORE SF STARTUP / TECH MEETUPS (HIGH SIGNAL) ---
+
+# Startup SF – pitch battles, founder networking
+https://www.meetup.com/startup-sf/events/ical/
+
+# SF Startup – repository of startup events in SF & online-friendly PT events
+https://www.meetup.com/sf-startup/events/ical/
+
+# Startups and Tech Events in San Francisco – biweekly startup/investor networking
+https://www.meetup.com/startups-and-tech-events-in-san-francisco/events/ical/
+
+# San Francisco Startup Socials – “less awkward” startup social + networking
+https://www.meetup.com/sanfranciscostartupfun/events/ical/
+
+# San Francisco Startups & Tech Mixer – broad tech + startup mixer
+https://www.meetup.com/sftechmixer/events/ical/
+
+# San Francisco and Bay Area Entrepreneurs & Startup Network
+https://www.meetup.com/startup_community/events/ical/
+
+# San Francisco AI Engineers – high-signal AI engineering community
+https://www.meetup.com/san-francisco-ai-engineers/events/ical/
+
+# Tech in Motion SF – established tech events series
+https://www.meetup.com/techinmotionsf/events/ical/
+
+
+# --- SOUTH BAY / PENINSULA STARTUP / TECH (OPTIONAL BUT GOOD) ---
+
+# Silicon Valley startups / founders / mixers – peninsula + SV crowd
+https://www.meetup.com/silicon-valley-startups/events/ical/
+https://www.meetup.com/tech-and-startups-san-jose/events/ical/
+
+
+# --- PROFESSIONAL / BUSINESS NETWORKING ---
+
+# SF Entrepreneurs – general entrepreneur networking
 https://www.meetup.com/sf-entrepreneurs/events/ical/
+
+# Startup Founders Community – founders + operators
 https://www.meetup.com/startupfounderscommunity/events/ical/
-https://www.meetup.com/finance-innovation-sf/events/ical/
+
+# SV Small Business Network – smaller-business but can yield local owner connections
 https://www.meetup.com/sv-small-business-network/events/ical/
 
-# --- NETWORKING + COMMUNITY ---
-https://www.meetup.com/professionals-in-tech-sf/events/ical/
-https://www.meetup.com/leadership-lounge-bay-area/events/ical/
-https://www.meetup.com/san-francisco-young-professionals/events/ical/
-https://www.meetup.com/silicon-valley-young-professionals/events/ical/
+# Network After Work – SF – classic after-work mixer, lots of professionals
 https://www.meetup.com/network-after-work-san-francisco/events/ical/
 
-# --- INNOVATION + CONFERENCES ---
-https://www.eventbrite.com/calendar.ics?eid=techcrunch-disrupt-san-francisco
-https://www.eventbrite.com/calendar.ics?eid=startup-world-cup-silicon-valley
-https://www.eventbrite.com/calendar.ics?eid=plug-and-play-tech-center
-https://www.eventbrite.com/calendar.ics?eid=aws-startup-loft-sf
 
-# --- BONUS: INDUSTRY HUBS + UNIVERSITY INNOVATION ---
+# --- AI / TECH / ENGINEERING LEARNING (MIX OF NETWORK + LEARNING) ---
+
+# Additional AI / ML / tech meetups (safe to keep if active in your calendar)
+https://www.meetup.com/professionals-in-tech-sf/events/ical/
+https://www.meetup.com/san-francisco-young-professionals/events/ical/
+https://www.meetup.com/silicon-valley-young-professionals/events/ical/
+
+
+# --- UNIVERSITY & LIFELONG LEARNING FEEDS (HIGH VALUE CONTENT) ---
+
+# UC Berkeley – campus-wide events (lectures, talks, etc.)
 https://events.berkeley.edu/?view=ical
+
+# Stanford Engineering – talks / seminars / innovation events
 https://engineering.stanford.edu/events/ical
+
+# San José State University – general events calendar
 https://calendar.sjsu.edu/calendar.ics
 
-# --- OPTIONAL (Safe to enable later if working again) ---
-# https://foundersnetwork.com/events/feed/   # RSS only (no .ics)
-# https://lu.ma/sf?ical=1                     # HTML, not iCal
-# https://www.startupgrind.com/events/ical/   # Broken for now
+
+# --- FINANCE / CAPITAL / PRO NETWORKS (OPTIONAL BUT ON-BRAND) ---
+
+# SF Private Equity Network – curated PE networking in SF
+https://calendar.google.com/calendar/ical/admin@sfprivateequitynetwork.com/public/basic.ics
+
+
+# --- LEAVE THESE COMMENTED OUT FOR NOW (LOW VALUE / BROKEN) ---
+
+# One-off conferences / may be empty most of the year:
+# https://www.eventbrite.com/calendar.ics?eid=techcrunch-disrupt-san-francisco
+# https://www.eventbrite.com/calendar.ics?eid=startup-world-cup-silicon-valley
+# https://www.eventbrite.com/calendar.ics?eid=plug-and-play-tech-center
+# https://www.eventbrite.com/calendar.ics?eid=aws-startup-loft-sf
+
+# Known non-ICS or flaky sources – we can wire these up in a Phase 2 HTML/RSS parser:
+# https://lu.ma/sf
+# https://foundersnetwork.com/events
+# https://www.startupgrind.com/
+# Various magazine / city “things to do” calendars
